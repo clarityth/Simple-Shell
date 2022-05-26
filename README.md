@@ -31,7 +31,7 @@ This project is organized into several parts:
 2. Adding support of input and output redirection
 3. Allowing the parent and child processes to communicate via a pipe
 
-## Executing Command in a Child Proces
+## Executing Command in a Child Process
 The first task is to modify the main() function in Figure 1 so that a child process is forked and
 executes the command specified by the user. This will require parsing what the user has entered
 into separate tokens and storing the tokens in an array of character strings (args in Figure 1). For
