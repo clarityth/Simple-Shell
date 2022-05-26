@@ -4,7 +4,7 @@ commands and then executes each command in a separate process. Your implementati
 support input and output redirection, as well as pipes as a form of IPC between a pair of commands.
 Completing this project will involve using the UNIX fork(), exec(), wait(), dup2(), and
 pipe() system calls and can be completed on any Linux, UNIX, or macOS system.
-# Overview
+## Overview
 A shell interface gives the user a prompt, after which the next command is entered. The example
 below illustrates the prompt osh> and the user’s next command: cat prog.c. (This command
 displays the file prog.c on the terminal using the <i>UNIX cat</i> command.)
@@ -31,7 +31,7 @@ This project is organized into several parts:
 2. Adding support of input and output redirection
 3. Allowing the parent and child processes to communicate via a pipe
 
-# Executing Command in a Child Proces
+## Executing Command in a Child Proces
 The first task is to modify the main() function in Figure 1 so that a child process is forked and
 executes the command specified by the user. This will require parsing what the user has entered
 into separate tokens and storing the tokens in an array of character strings (args in Figure 1). For
@@ -46,7 +46,7 @@ Here, command represents the command to be performed and params stores the param
 this command. For this project, the execvp() function should be invoked as <i>execvp(args[0],args)</i>. Be sure to check whether the user included & to determine whether or not the parent process
 is to wait for the child to exit.
 
-# Redirecting Input and Output
+## Redirecting Input and Output
 Your shell should then be modified to support the ‘>’ and ‘<’ redirection operators, where ‘>’
 redirects the output of a command to a file and ‘<’ redirects the input to a command from a file.
 For example, if a user enters
@@ -63,7 +63,7 @@ in fact be sent to the <i>out.txt</i> file. You can assume that commands will co
 one output redirection and will not contain both. In other words, you do not have to be concerned
   with command sequences such as <i>sort < in.txt > out.txt.</i>
   
-# Communication via a Pipe
+## Communication via a Pipe
 The final modification to your shell is to allow the output of one command to serve as input to
 another using a pipe. For example, the following command sequence
 <h4>osh> ls -l | less</h4>
@@ -77,7 +77,7 @@ previous section. Finally, although several commands can be chained together usi
 you can assume that commands will contain only one pipe character and will not be combined with
 any redirection operators.
 
-# 명령어 파싱과 오류 무시
+## 명령어 파싱과 오류 무시
 이번 프로젝트는 프로세스 생성과 프로세스간 통신을 이해하는 것이 주요 목적이다. 입력된
 명령어를 파싱해서 형식에 어긋나는 명령어 오류를 유연하게 처리하는 것은 필요하지만 이번
 주제와는 별개의 문제이므로 여기서는 고려하지 않는다. 문제를 간단하게 하기 위해서 Simple
